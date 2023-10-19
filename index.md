@@ -15,24 +15,44 @@
 9. [Algorithmic Accuracy and Precision](#algorithmic-accuracy-and-precision)
 
 ## Description of Algorithms
-    # Strassen's and Winograd's Algorithms
-    Strassen's and Winograd's algorithms are two of the most popular algorithms for matrix multiplication. Both algorithms are based on the divide-and-conquer approach. Strassen's algorithm is a recursive algorithm that divides the matrices into submatrices of size n/2 x n/2. The algorithm then recursively multiplies the submatrices to produce the final result. The time complexity of Strassen's algorithm is O(n^2.807). Winograd's algorithm is also a recursive algorithm that divides the matrices into submatrices of size n/2 x n/2. The algorithm then recursively multiplies the submatrices to produce the final result. The time complexity of Winograd's algorithm is O(n^2.75).
+# Strassen's and Winograd's Algorithms
+Strassen's and Winograd's algorithms are two of the most popular algorithms for matrix multiplication. Both algorithms are based on the divide-and-conquer approach. Strassen's algorithm is a recursive algorithm that divides the matrices into submatrices of size n/2 x n/2. The algorithm then recursively multiplies the submatrices to produce the final result. The time complexity of Strassen's algorithm is O(n^2.807). Winograd's algorithm is also a recursive algorithm that divides the matrices into submatrices of size n/2 x n/2. The algorithm then recursively multiplies the submatrices to produce the final result. The time complexity of Winograd's algorithm is O(n^2.75).
 
-    Matrix A dot Matrix B = Matrix C:
+Matrix A dot Matrix B = Matrix C:
 
+    +------+------+   +------+------+   +------+------+
+    | A11  | A12  |   | B11  | B12  |   | C11  | C12  |
+    +------+------+ * +------+------+ = +------+------+
+    | A21  | A22  |   | B21  | B22  |   | C21  | C22  |
+    +------+------+   +------+------+   +------+------+
 
-    <table style="border-collapse: collapse;">
-    <tr>
-        <td style="border: 1px solid black; padding: 10px;">A11</td>
-        <td style="border: 1px solid black; padding: 10px;">A12</td>
-    </tr>
-    <tr>
-        <td style="border: 1px solid black; padding: 10px;">A21</td>
-        <td style="border: 1px solid black; padding: 10px;">A22</td>
-    </tr>
-    </table>
+|           |      Winograd              |  Strassen               |
+|-----------|:---------------------------|:------------------------|
+| Forward   | S1 = A21 + A22             | S1 = A11 + A22          |
+|           | S2 = A21 + A22 - A11       | S2 = S21 + A22          |
+|           | S3 = A11 - A21             | S3 = A11 + A12          |
+|           | S4 = A12 - A21 - A22 + A11 | S4 = S21 - A11          |
+|           | T1 = B12 - B11             | S5 = A12 - A22          |
+|           | T2 = B22 - B12 + B11       | T1 = B11 + B22          |
+|           | T3 = B22 - B12             | T2 = B12 - B22          |
+|           | T4 = B22 - B12 + B11 - B21 | T3 = B21 - B11          |
+|           |                            | T4 = B11 - B12          |
+|           |                            | T5 = B21 + B22          |
+|-----------|----------------------------|-------------------------|
+| Recursive | R1 = A11 * B11             | R1 = S1 * T1            |
+| call      | R2 = A12 * B21             | R2 = S2 * B11           |
+|           | R3 = S4 * B22              | R3 = A11 * T2           |
+|           | R4 = A22 * T4              | R4 = A22 * T3           |
+|           | R5 = S1 * T1               | R5 = S3 * B22           |
+|           | R6 = S2 * T2               | R6 = S4 * T4            |
+|           | R7 = S3 * T3               | R7 = S5 * T5            |
+|-----------|----------------------------|-------------------------|
+| Backward  | C11 = R1 + R2              | C11 = R1 + R4 + R5 + R7 |
+|           | C12 = R1 + R3 + R5 + R6    | C12 = R3 + R5           |
+|           | C21 = R1 - R4 + R6         | C21 = R2 + R4           |
+|           | C22 = R1 + R5 + R6 + R7    | C22 = R1 + R3 - R2 + R6 |
+|-----------|----------------------------|-------------------------|
 
-    
 
 ## Parallel Processing
 
