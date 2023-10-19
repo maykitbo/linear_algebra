@@ -1,2 +1,0 @@
-/usr/bin/ar qc libimage_painter.a CMakeFiles/image_painter.dir/image_painter.cc.o
-/usr/bin/ranlib libimage_painter.a

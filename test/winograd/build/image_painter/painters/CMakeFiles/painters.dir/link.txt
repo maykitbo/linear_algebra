@@ -1,2 +1,0 @@
-/usr/bin/ar qc libpainters.a CMakeFiles/painters.dir/painters_autogen/mocs_compilation.cpp.o CMakeFiles/painters.dir/abstract.cc.o CMakeFiles/painters.dir/background.cc.o CMakeFiles/painters.dir/painter.cc.o CMakeFiles/painters.dir/parameters.cc.o
-/usr/bin/ranlib libpainters.a
