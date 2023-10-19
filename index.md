@@ -45,47 +45,42 @@ Matrix A dot Matrix B = Matrix C:
 
 ## Parallel Processing
 
-    Parallelization Techniques and Performance Scaling
-    Impact of Thread Count on Parallel Algorithm Efficiency
-    Scalability Analysis across Multi-core Processors
+Parallelization Techniques and Performance Scaling
+Impact of Thread Count on Parallel Algorithm Efficiency
+Scalability Analysis across Multi-core Processors
 
 ## Performance Comparison
 
-    Winograd
-    Strassen
-    Parallel Strassen
-    Parallel Winograd
-    cahce-friendly row-wize paralleled classic matrix-matrix multiplication algorithms
-    OpenBLAS library
+![Performance](misc/speed_compare_1.png)
 
 ## Recursive Algorithm Analysis
 
-    Loading Patterns in Recursive Levels of Winograd's Algorithm
-    Loading Patterns in Recursive Levels of Strassen's Algorithm
-    Impact of Matrix Size on Recursive Depth
+Loading Patterns in Recursive Levels of Winograd's Algorithm
+Loading Patterns in Recursive Levels of Strassen's Algorithm
+Impact of Matrix Size on Recursive Depth
 
 ## Big O Notation Calculation
 
-    Experimental Data Collection for Algorithmic Complexity Analysis
-    Applying Levenberg Marquardt Algorithm to Calculate Big O Notation
+Experimental Data Collection for Algorithmic Complexity Analysis
+Applying Levenberg Marquardt Algorithm to Calculate Big O Notation
 
 ## Profiling and Optimization
 
-    Profiling Matrix-Matrix Multiplication Implementations using perf Tool
-    Optimization Strategies for Recursive Algorithms
-    Analyzing Hotspots and Bottlenecks in Algorithm Implementations
+Profiling Matrix-Matrix Multiplication Implementations using perf Tool
+Optimization Strategies for Recursive Algorithms
+Analyzing Hotspots and Bottlenecks in Algorithm Implementations
 
 ## Memory Usage Analysis
 
-    Memory Footprint of Different Matrix Multiplication Implementations
-    Analysis of Temporary Storage Requirements in Recursive Algorithms
+Memory Footprint of Different Matrix Multiplication Implementations
+Analysis of Temporary Storage Requirements in Recursive Algorithms
 
 ## Impact of Compiler Optimization
 
-    Compiler Optimization Flags and Their Influence on Algorithm Performance
-    Comparative Analysis of Compiled Code with Different Optimization Levels
+Compiler Optimization Flags and Their Influence on Algorithm Performance
+Comparative Analysis of Compiled Code with Different Optimization Levels
 
 ## Algorithmic Accuracy and Precision
 
-    Numerical Stability and Precision in Matrix Operations
-    Comparative Analysis of Floating-Point Errors in Different Algorithms
+Numerical Stability and Precision in Matrix Operations
+Comparative Analysis of Floating-Point Errors in Different Algorithms
