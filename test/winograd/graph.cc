@@ -61,18 +61,18 @@ int GraphBuilder(int argc, char *argv[], std::vector<Graph::data_t> &values, con
     // painter.AddGraph(values[3], "SP", QPen(Qt::yellow, 1), true).SetPointsPen(QPen(Qt::yellow, 4));
     // painter.AddGraph(values[4], "blas", QPen(Qt::cyan, 1), true).SetPointsPen(QPen(Qt::cyan, 4));
     // painter.AddGraph(values[5], "mul2P", QPen(Qt::magenta, 1), true).SetPointsPen(QPen(Qt::magenta, 4));
-    // painter.AddGraph(values[6], "W_reg", QPen(Qt::red, 2));
-    // painter.AddGraph(values[7], "WP_reg", QPen(Qt::blue, 2));
-    // painter.AddGraph(values[8], "S_reg", QPen(Qt::green, 2));
-    // painter.AddGraph(values[9], "SP_reg", QPen(Qt::yellow, 2));
-    // painter.AddGraph(values[10], "blas_reg", QPen(Qt::cyan, 2));
-    // painter.AddGraph(values[11], "mul2P_reg", QPen(Qt::magenta, 2));
-    painter.AddGraph(values[12], "Winograd", QPen(Qt::red, 2), true).SetPointsPen(QPen(Qt::red, 4));
-    painter.AddGraph(values[13], "Winograd Parallel", QPen(Qt::blue, 2), true).SetPointsPen(QPen(Qt::blue, 4));
-    painter.AddGraph(values[14], "Strassen", QPen(Qt::green, 2), true).SetPointsPen(QPen(Qt::green, 4));
-    painter.AddGraph(values[15], "Strassen Parallel", QPen(Qt::yellow, 2), true).SetPointsPen(QPen(Qt::yellow, 4));
-    painter.AddGraph(values[16], "OpenBLAS", QPen(Qt::cyan, 2), true).SetPointsPen(QPen(Qt::cyan, 4));
-    painter.AddGraph(values[17], "Classic Parallel", QPen(Qt::magenta, 2), true).SetPointsPen(QPen(Qt::magenta, 4));
+    painter.AddGraph(values[6], "W_reg", QPen(Qt::red, 2));
+    painter.AddGraph(values[7], "WP_reg", QPen(Qt::blue, 2));
+    painter.AddGraph(values[8], "S_reg", QPen(Qt::green, 2));
+    painter.AddGraph(values[9], "SP_reg", QPen(Qt::yellow, 2));
+    painter.AddGraph(values[10], "blas_reg", QPen(Qt::cyan, 2));
+    painter.AddGraph(values[11], "mul2P_reg", QPen(Qt::magenta, 2));
+    // painter.AddGraph(values[12], "Winograd", QPen(Qt::red, 2), true).SetPointsPen(QPen(Qt::red, 4));
+    // painter.AddGraph(values[13], "Winograd Parallel", QPen(Qt::blue, 2), true).SetPointsPen(QPen(Qt::blue, 4));
+    // painter.AddGraph(values[14], "Strassen", QPen(Qt::green, 2), true).SetPointsPen(QPen(Qt::green, 4));
+    // painter.AddGraph(values[15], "Strassen Parallel", QPen(Qt::yellow, 2), true).SetPointsPen(QPen(Qt::yellow, 4));
+    // painter.AddGraph(values[16], "OpenBLAS", QPen(Qt::cyan, 2), true).SetPointsPen(QPen(Qt::cyan, 4));
+    // painter.AddGraph(values[17], "Classic Parallel", QPen(Qt::magenta, 2), true).SetPointsPen(QPen(Qt::magenta, 4));
 
     painter.GetBackground().SetXTextFunc([] (double x) {
         return QString::number(x);

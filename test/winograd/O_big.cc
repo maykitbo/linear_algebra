@@ -19,8 +19,8 @@ struct LMFunctor
         double c = params[2];
         for (size_t i = 0; i < data.size(); ++i)
         {
-            residuals[i] = data[i].second - (a * pow(data[i].first, b) + c);
-            // residuals[i] = data[i].second - (a * pow(data[i].first, b) + c * data[i].first);
+            // residuals[i] = data[i].second - (a * pow(data[i].first, b) + c);
+            residuals[i] = data[i].second - (a * pow(data[i].first, b) + c * data[i].first);
             // residuals[i] = data[i].second - a * pow(data[i].first, b);
         }
         return 0;
@@ -33,12 +33,12 @@ struct LMFunctor
         double c = params[2];
         for (size_t i = 0; i < data.size(); ++i)
         {
-            jacobian(i, 0) = -pow(data[i].first, b);
-            jacobian(i, 1) = -a * pow(data[i].first, b) * log(data[i].first);
-            jacobian(i, 2) = -1;
             // jacobian(i, 0) = -pow(data[i].first, b);
             // jacobian(i, 1) = -a * pow(data[i].first, b) * log(data[i].first);
-            // jacobian(i, 2) = -data[i].first;
+            // jacobian(i, 2) = -1;
+            jacobian(i, 0) = -pow(data[i].first, b);
+            jacobian(i, 1) = -a * pow(data[i].first, b) * log(data[i].first);
+            jacobian(i, 2) = -data[i].first;
         }
 		return 0;
     }
@@ -73,6 +73,7 @@ std::vector<double> PerformNonlinearRegression(const vector_data &data)
 
     std::cout << '\n';
     std::vector<double> result = {params[0], params[1], params[2]};
+    // std::vector<double> result = {params[0], params[1]};
     return result;
 }
 
